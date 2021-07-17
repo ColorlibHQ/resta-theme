@@ -1,0 +1,96 @@
+<?php 
+// Block direct access
+if( !defined( 'ABSPATH' ) ){
+	exit( 'Direct script access denied.' );
+}
+/**
+ * @Packge     : Resta
+ * @Version    : 1.0
+ * @Author     : Colorlib
+ * @Author URI : http://colorlib.com/wp/
+ *
+ */
+
+// Post Item Start
+
+?>
+
+<article id="<?php the_ID(); ?>" <?php post_class('blog_item'); ?>>
+	<?php 
+	/**
+	 * Blog Post thumbnail
+	 * @Hook  resta_blog_posts_thumb
+	 *
+	 * @Hooked resta_blog_posts_thumb_cb
+	 * 
+	 *
+	 */
+	do_action( 'resta_blog_posts_thumb' );
+
+	/**
+	 * 
+	 * Blog details wrapper start hook function.
+	 * column end.
+	 *
+	 * Hook resta_blog_details_wrap_start
+	 *
+	 * @Hooked resta_blog_details_wrap_start_cb
+	 *  
+	 */
+	do_action( 'resta_blog_details_wrap_start' );
+	
+	/**
+	 * Blog Post Meta
+	 * @Hook  resta_blog_posts_meta
+	 *
+	 * @Hooked resta_blog_posts_meta_cb
+	 * 
+	 *
+	 */
+	// do_action( 'resta_blog_posts_meta' );
+
+	/**
+	 * Blog Post title
+	 * @Hook  resta_blog_posts_title
+	 *
+	 * @Hooked resta_blog_posts_title_cb
+	 * 
+	 *
+	 */
+	do_action( 'resta_blog_posts_title' );		
+	
+	/**
+	 * Blog Excerpt With read more button
+	 * @Hook  resta_blog_posts_excerpt
+	 *
+	 * @Hooked resta_blog_posts_excerpt_cb
+	 * @Hooked resta_blog_read_more_cb
+	 * 
+	 *
+	 */
+	do_action( 'resta_blog_posts_excerpt' );
+	
+	/**
+	 * Blog posts info links hook function.
+	 * @Hook  resta_blog_posts_info_link
+	 *
+	 * @Hooked resta_blog_posts_info_link_cb
+	 * 
+	 *
+	 */
+	do_action( 'resta_blog_posts_info_link' );
+
+	/**
+	 * 
+	 * Blog details wrapper end hook function.
+	 * column end.
+	 *
+	 * Hook resta_blog_details_wrap_end
+	 *
+	 * @Hooked resta_blog_details_wrap_end_cb
+	 *  
+	 */
+	do_action( 'resta_blog_details_wrap_end' );
+	
+	?>
+</article>
